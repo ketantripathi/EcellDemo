@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS events</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .nav {
+            background-color: white;
+            box-shadow: 0px 0.5px 8px rgb(73, 73, 73);
+            position: sticky;
+            top: 0px;
+            left: 0px;
+            height: 60px;
+        }
+
+        .nav ul {
+            display: flex;
+            padding: 9px;
+        }
+
+        .nav ul li {
+            list-style: none;
+            background-color: #039be5;
+            padding: 10px 6px;
+            text-align: center;
+            margin: 3px;
+            width: 80px;
+            border-radius: 5px;
+        }
+
+        #l1 {
+            position: sticky;
+            left: 3px;
+        }
+
+        #l2 {
+            position: sticky;
+            left: 1150px;
+        }
+
+        #l3 {
+            position: sticky;
+            left: 1900px;
+        }
+
+        .nav a {
+            padding: 0px 4px;
+            text-decoration: none;
+            color: white;
+            font-family: "Arial", sans-serif;
+            font-weight: 400;
+            letter-spacing: 3px;
+
+        }
+        .nav a:hover{
+            color: black;
+        }
+        .nav li:hover{
+            background-color: rgb(175, 175, 175);
+            color: black;
+        }
+        .nav img {
+            width: 100%;
+            height: auto;
+        }
+
+        #cell {
+            position: absolute;
+            top: 880px;
+            left: 0px;
+            padding: 18px;
+            background-color: black;
+            color: white;
+            font-family: "Arial", sans-serif;
+            letter-spacing: 3px;
+            font-size: 36px;
+            opacity: 0.6;
+            background-blend-mode: multiply;
+            order: 5;
+        }
+
+        h1,h3 {
+            font-family: "Arial", sans-serif;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #039be5;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        #Ecell {
+            width: 100%;
+            height: auto;
+            z-index: -1;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: 60px;
+            z-index: -1;
+        }
+
+        .sameabout {
+            width: 500px;
+            height: 335px;
+            padding: 24px;
+            position: relative;
+            left: 50px;
+            border-radius: 30px;
+        }
+
+        #abo p {
+            font-family: "Arial", sans-serif;
+            font-weight: 400;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            word-spacing: 4px;
+        }
+        
+        .contact {
+            z-index: -1;
+            position: relative;
+            top: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact h1 {
+            display: flex;
+            align-items: start;
+        }
+
+        #ad {
+            font-weight: bold;
+        }
+
+        .contact p {
+            font-family: "Arial", sans-serif;
+        }
+        form {
+            padding: 2px;
+            margin: 3px;
+            position: relative;
+            top: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .form{
+            padding: 2px;
+            margin: 3px;
+        }
+        .form input,textarea{
+            width: 1000px;
+            height: 30px;
+            padding: 13px;
+            margin: 2px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            border-style:double;
+        }
+        textarea{
+            border: 1.9px solid black;
+        }
+        .contactus{
+            display: block;
+        }
+        #btn{
+            position: relative;
+            left: -445px !important;
+            margin: 4px;
+            background-color: #039be5;
+            color: #ffffff;
+            padding: 10px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            border: #039be5;
+            font-size: 15px;
+            }
+            #btn:hover{
+                background-color: rgb(175, 175, 175);
+                color: black;
+            }
+        input::placeholder, textarea::placeholder{
+            font-size: 0.9rem;
+        }
+        .foot{
+            background-color: rgb(233, 232, 232);
+            position: relative;
+            top: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            z-index: -1;
+        }
+        .foot p{ 
+            cursor: text;
+            font-family: "Arial", sans-serif;
+        }
+        .foot a{
+            font-family: "Arial", sans-serif;
+            color: black;
+            text-decoration: none;
+        }
+        .foot a:hover{
+            cursor: pointer;
+            color: rgb(156, 221, 4);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <ul>
+            <li id="l1"><a href="dayJS.html">E-Cell</a></li>
+            <li id="l2"><a href="">About</a></li>
+            <li id="l3"><a href="">Contact</a></li>
+        </ul>
+    </nav>
+    <img id="Ecell" src="https://wallpaperaccess.com/full/656665.jpg" alt="Hamburger CAtering">
+    <div id="cell">E-Cell</div>
+    <div class="about">
+        <img class="sameabout" id="ab"
+            src="https://getwallpapers.com/wallpaper/full/5/d/d/765277-top-business-wallpapers-2000x1333-picture.jpg"
+            alt="">
+        <div class="sameabout" id="abo">
+            <h1>About us</h1>
+            <br>
+            <br>
+            <h3>Igniting Entrepreneurial Spirits</h3>
+            <br>
+            <p>Ecell Vnit is an initiative to promote and nurture entrepreneurship among students. Our goal is to create
+                an ecosystem that fosters innovation and encourages aspiring entrepreneurs to transform their ideas into
+                successful businesses. We organize workshops, seminars, and events that provide valuable insights and
+                networking opportunities to young minds. <br><br>We believe in the power of innovation and creativity.
+                Join us on this entrepreneurial journey and be a part of the change. Together, we can make a difference!
+            </p>
+        </div>
+    </div>
+    <div class="contactus">
+
+        <div class="contact">
+            <div>
+                <h1>Contact Ecell Vnit</h1>
+                <br>
+                <br>
+                <p>If you have any questions or would like to get in touch with us, we'd love to hear from you. Feel
+                    free to reach out using the contact details below:</p>
+                <br>
+                <p id="ad">Ecell Vnit, VNIT Campus, Nagpur, Maharashtra</p>
+                <br>
+                <p>You can also contact us by phone at 0123456789 or email at contact@ecellvnit.com. Alternatively, you
+                    can use the form below to send us a message:</p>
+            </div>
+            <br>
+        </div>
+        <form action="/contact_action.php" method="post">
+            <p class="form" id="form1">
+                <input type="text" placeholder="Name" id="">
+            </p>
+            <p class="form" id="form2">
+                <input type="email" placeholder="Email" id="">
+            </p>
+            <p class="form" id="form3">
+                <input type="text" placeholder="Subject" id="">
+            </p>
+            <p class="form" id="form4">
+                <textarea placeholder="Messsage" id=""></textarea>
+            </p>
+            <button id="btn">Send Messsage</button>
+        </form>
+    </div>
+    <br>
+    <footer>
+        <div class="foot">
+            <p>Created as<a href="https://www.ecellvnit.org/" target="main"> E-cell demo template</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
